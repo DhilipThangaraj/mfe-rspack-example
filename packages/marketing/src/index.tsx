@@ -1,24 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import HomePage from "./pages/home-page";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ProfilesPages from "./pages/profiles-page";
-import ErrorPage from "./pages/not-found-page";
 
 import "@/styles/global.css";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <HomePage />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/profiles",
-    element: <ProfilesPages />,
-  },
-]);
+const router = createBrowserRouter([]);
 
 const rootEl = document.getElementById("root");
 if (rootEl) {
