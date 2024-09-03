@@ -33,6 +33,7 @@ export function RegistrationForm() {
   } = formMethods;
 
   const formType = watch("formType");
+  console.log(">>>>>>>>formType", formType);
   const formTypeIsPersonalInformation = formType === "personalInformation";
   const formTypeIsShippingAddress = formType === "shippingAddress";
   const formTypeIsPaymentInformation = formType === "paymentInformation";
