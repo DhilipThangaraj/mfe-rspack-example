@@ -6,7 +6,7 @@ const Header: FC = () => {
     <header className="bg-white shadow-md p-4">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="text-xl font-bold">
-          My E-Commerce
+          DV E-Commerce
         </Link>
         <nav className="space-x-4">
           <Link to="/" className="hover:underline">
