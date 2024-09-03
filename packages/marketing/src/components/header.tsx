@@ -1,11 +1,24 @@
-import React from "react";
+import { FC } from "react";
+import { Link } from "react-router-dom";
 
-const HomePage = () => {
+const Header: FC = () => {
   return (
-    <div>
-      <h1>Home Page</h1>
-    </div>
+    <header className="bg-white shadow-md p-4">
+      <div className="container mx-auto flex justify-between items-center">
+        <Link to="/" className="text-xl font-bold">
+          My E-Commerce
+        </Link>
+        <nav className="space-x-4">
+          <Link to="/" className="hover:underline">
+            Home
+          </Link>
+          <Link to="/cart" className="hover:underline">
+            Cart
+          </Link>
+        </nav>
+      </div>
+    </header>
   );
 };
 
-export default HomePage;
+export default Header;
