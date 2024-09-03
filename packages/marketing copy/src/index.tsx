@@ -6,8 +6,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProfilesPages from "./pages/profiles-page";
 import ErrorPage from "./pages/not-found-page";
 
-import "@/styles/global.css";
-
 const router = createBrowserRouter([
   {
     path: "/",
