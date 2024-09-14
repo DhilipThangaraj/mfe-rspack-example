@@ -1,5 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
+import { DevTool } from "@hookform/devtools";
 
 import { Button } from "@/components/Forms/Button";
 
@@ -30,6 +31,7 @@ export function RegistrationForm() {
     getValues,
     handleSubmit,
     formState: { isSubmitting },
+    control,
   } = formMethods;
 
   const formType = watch("formType");
@@ -84,6 +86,7 @@ export function RegistrationForm() {
           {formTypeIsPaymentInformation ? "Submit" : "Next"}
         </Button>
       </form>
+      <DevTool control={control} />
     </FormProvider>
   );
 }

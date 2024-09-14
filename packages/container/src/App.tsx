@@ -1,10 +1,25 @@
-import './App.css';
+import React, { lazy } from "react";
+
+const RemoteLogin = lazy(() => import("shared_app1/Login"));
 
 const App = () => {
   return (
     <div className="content">
-      <h1>Rsbuild with React</h1>
-      <p>Start building amazing things with Rsbuild.</p>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          background: "yellow",
+          color: "black",
+          fontSize: "20px",
+        }}
+      >
+        {"Container App"}
+      </div>
+      <div>
+        <RemoteLogin />
+      </div>
     </div>
   );
 };
