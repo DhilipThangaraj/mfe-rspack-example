@@ -1,28 +1,34 @@
 import React, { lazy } from "react";
 
-const RemoteLogin = lazy(() => import("shared_app1/Login"));
-// const RemoteMarketingMount = lazy(() => import("shared_app2/Marketing"));
+// const RemoteLogin = lazy(() => import("shared_app1/Login"));
+const RemoteMarketingHomeApp = lazy(
+  () => import("./components/marketing-home-app")
+);
+
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import Layout from "./layout";
+
+import ErrorPage from "./pages/not-found-page";
+
+import "@/styles/global.css";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />, // Use Layout component
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <RemoteMarketingHomeApp />,
+      },
+    ],
+  },
+]);
 
 const App = () => {
-  return (
-    <div className="content">
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          background: "yellow",
-          color: "black",
-          fontSize: "20px",
-        }}
-      >
-        {"Container App"}
-      </div>
-      <div>
-        <RemoteLogin />
-      </div>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;

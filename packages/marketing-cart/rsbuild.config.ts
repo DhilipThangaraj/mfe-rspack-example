@@ -12,10 +12,10 @@ export default defineConfig({
     },
   },
   server: {
-    port: 7002,
+    port: 7004,
   },
   dev: {
-    assetPrefix: "http://localhost:7002",
+    assetPrefix: "http://localhost:7004",
   },
   html: {
     template: "./src/index.html",
@@ -23,12 +23,12 @@ export default defineConfig({
   tools: {
     rspack: async (config, { appendPlugins }) => {
       // You need to set a unique value that is not equal to other applications
-      config.output!.uniqueName = "shared_app1";
+      config.output!.uniqueName = "shared_app3";
       appendPlugins([
         new ModuleFederationPlugin({
-          name: "shared_app1",
+          name: "shared_app3",
           exposes: {
-            "./Login": "./src/App.tsx",
+            "./MarketingCartApp": "./src/bootstrap.tsx",
           },
           shared: (await packageJson).dependencies,
         }),

@@ -12,7 +12,10 @@ export default defineConfig({
     },
   },
   server: {
-    port: 2000,
+    port: 7001,
+  },
+  dev: {
+    assetPrefix: "http://localhost:7001",
   },
   html: {
     template: "./src/index.html",
@@ -23,8 +26,8 @@ export default defineConfig({
         new ModuleFederationPlugin({
           name: "host_app",
           remotes: {
-            shared_app1: "shared_app1@http://localhost:3000/mf-manifest.json",
-            shared_app2: "shared_app2@http://localhost:4000/mf-manifest.json",
+            // shared_app1: "shared_app1@http://localhost:7001/mf-manifest.json",
+            shared_app2: "shared_app2@http://localhost:7003/mf-manifest.json",
           },
           shared: (await packageJson).dependencies,
         }),

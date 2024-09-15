@@ -12,10 +12,10 @@ export default defineConfig({
     },
   },
   server: {
-    port: 4000,
+    port: 7003,
   },
   dev: {
-    assetPrefix: "http://localhost:4000",
+    assetPrefix: "http://localhost:7003",
   },
   html: {
     template: "./src/index.html",
@@ -28,7 +28,7 @@ export default defineConfig({
         new ModuleFederationPlugin({
           name: "shared_app2",
           exposes: {
-            "./Marketing": "./src/bootstrap.tsx",
+            "./MarketingHomeApp": "./src/bootstrap.tsx",
           },
           shared: (await packageJson).dependencies,
         }),
