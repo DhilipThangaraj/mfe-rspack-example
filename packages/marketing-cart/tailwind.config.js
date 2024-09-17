@@ -5,4 +5,5 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  prefix: "shared-app2-",
 };

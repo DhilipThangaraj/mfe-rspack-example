@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  // prefix: "shared-app4-",
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",

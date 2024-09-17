@@ -1,2 +1,2 @@
-export * from './compiled-types/App';
-export { default } from './compiled-types/App';
+export * from './compiled-types/bootstrap';
+export { default } from './compiled-types/bootstrap';

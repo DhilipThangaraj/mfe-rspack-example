@@ -15,6 +15,9 @@ const Header: FC = () => {
           <Link to="/cart" className="hover:underline">
             Cart
           </Link>
+          <Link to="/login" className="hover:underline">
+            Login
+          </Link>
         </nav>
       </div>
     </header>

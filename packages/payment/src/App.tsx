@@ -1,9 +1,11 @@
 import { RegistrationForm } from "./components/Forms/RegistrationForm";
 
-import "./App.css";
-
 function App() {
-  return <RegistrationForm />;
+  return (
+    <div className="flex items-center px-6">
+      <RegistrationForm />
+    </div>
+  );
 }
 
 export default App;
