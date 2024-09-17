@@ -28,7 +28,7 @@ export default defineConfig({
         new ModuleFederationPlugin({
           name: "shared_app1",
           exposes: {
-            "./Login": "./src/bootstrap.tsx",
+            "./AuthApp": "./src/bootstrap.tsx",
           },
           shared: (await packageJson).dependencies,
         }),

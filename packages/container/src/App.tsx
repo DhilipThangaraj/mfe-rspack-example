@@ -7,7 +7,7 @@ import ErrorPage from "./pages/not-found-page";
 import "@/styles/global.css";
 
 const RemoteLoginApp = withSuspense(
-  lazy(() => import("./components/login-app"))
+  lazy(() => import("./components/auth-app"))
 );
 const RemoteMarketingHomeApp = withSuspense(
   lazy(() => import("./components/marketing-home-app"))
@@ -27,11 +27,23 @@ const router = createBrowserRouter([
         element: <RemoteMarketingHomeApp />,
       },
       {
-        path: "login",
-        element: <RemoteLoginApp />,
+        path: "auth/:subpath",
+        element: (
+          <div className="mt-32">
+            <RemoteLoginApp />
+          </div>
+        ),
       },
       {
-        path: "payment",
+        path: "/cart",
+        element: (
+          <div className="mt-32">
+            <div>{"Add to cart page"}</div>
+          </div>
+        ),
+      },
+      {
+        path: "/payment",
         element: (
           <div className="mt-32">
             <RemotePaymentAddressApp />
@@ -43,6 +55,7 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
+  console.log("????????????????????router-container", router);
   return <RouterProvider router={router} />;
 };
 

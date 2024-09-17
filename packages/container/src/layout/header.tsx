@@ -9,13 +9,10 @@ const Header: FC = () => {
           DV E-Commerce
         </Link>
         <nav className="space-x-4">
-          <Link to="/" className="hover:underline">
-            Home
-          </Link>
           <Link to="/cart" className="hover:underline">
             Cart
           </Link>
-          <Link to="/login" className="hover:underline">
+          <Link to="/auth/login" className="hover:underline">
             Login
           </Link>
         </nav>
