@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [pluginReact()],
   mode: "development",
   server: {
-    port: 7004,
+    port: 7005,
   },
   html: {
     template: "./src/index.html",
@@ -18,7 +18,7 @@ export default defineConfig({
     },
   },
   dev: {
-    assetPrefix: "http://localhost:7004",
+    assetPrefix: "http://localhost:7005",
   },
   tools: {
     rspack: async (config, { appendPlugins }) => {
@@ -28,7 +28,7 @@ export default defineConfig({
         new ModuleFederationPlugin({
           name: "shared_app4",
           exposes: {
-            // "./Login": "./src/App.tsx",
+            "./PaymentAddressApp": "./src/bootstrap.tsx",
           },
           shared: (await packageJson).dependencies,
         }),

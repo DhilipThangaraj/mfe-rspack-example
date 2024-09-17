@@ -27,7 +27,8 @@ export default defineConfig({
           name: "host_app",
           remotes: {
             // shared_app1: "shared_app1@http://localhost:7001/mf-manifest.json",
-            shared_app2: "shared_app2@http://localhost:7003/mf-manifest.json",
+            //shared_app2: "shared_app2@http://localhost:7003/mf-manifest.json",
+            shared_app4: "shared_app4@http://localhost:7005/mf-manifest.json",
           },
           shared: (await packageJson).dependencies,
         }),

@@ -1,8 +1,12 @@
 import React, { lazy } from "react";
 
 // const RemoteLogin = lazy(() => import("shared_app1/Login"));
-const RemoteMarketingHomeApp = lazy(
-  () => import("./components/marketing-home-app")
+// const RemoteMarketingHomeApp = lazy(
+//   () => import("./components/marketing-home-app")
+// );
+
+const RemotePaymentAddressApp = lazy(
+  () => import("./components/payment-address-app")
 );
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -21,7 +25,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <RemoteMarketingHomeApp />,
+        element: <RemotePaymentAddressApp />,
       },
     ],
   },
