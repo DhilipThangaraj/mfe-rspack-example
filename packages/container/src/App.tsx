@@ -2,6 +2,9 @@ import React, { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import withSuspense from "./hoc/with-suspense";
+import Layout from "./layout";
+import ErrorPage from "./pages/not-found-page";
+import "@/styles/global.css";
 
 const RemoteLoginApp = withSuspense(
   lazy(() => import("./components/login-app"))
@@ -13,10 +16,6 @@ const RemotePaymentAddressApp = withSuspense(
   lazy(() => import("./components/payment-address-app"))
 );
 
-import Layout from "./layout";
-import ErrorPage from "./pages/not-found-page";
-import "@/styles/global.css";
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,27 +24,17 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: (
-          <Suspense fallback={<div>Loading...</div>}>
-            <RemoteMarketingHomeApp />
-          </Suspense>
-        ),
+        element: <RemoteMarketingHomeApp />,
       },
       {
         path: "login",
-        element: (
-          <Suspense fallback={<div>Loading...</div>}>
-            <RemoteLoginApp />
-          </Suspense>
-        ),
+        element: <RemoteLoginApp />,
       },
       {
         path: "payment",
         element: (
           <div className="mt-32">
-            <Suspense fallback={<div>Loading...</div>}>
-              <RemotePaymentAddressApp />
-            </Suspense>
+            <RemotePaymentAddressApp />
           </div>
         ),
       },
